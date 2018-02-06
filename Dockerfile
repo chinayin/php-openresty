@@ -1,7 +1,5 @@
 FROM php:7.1-fpm
 
-MAINTAINER dean <lishanghao@benditoutiao.com>
-
 COPY sh /var/pkg/sh
 
 # Docker Build Arguments
@@ -86,7 +84,7 @@ RUN \
         libevent-dev \
         libtool \
         pkg-config \
-        ##thrift end 
+        ##thrift end
         #for php extend end
         vim \
         sudo \
