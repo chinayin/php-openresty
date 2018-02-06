@@ -1,9 +1,6 @@
 # Dockerfile - alpine
-# https://github.com/openresty/docker-openresty
 
 FROM alpine:3.6
-
-MAINTAINER tofuiang <tofuliang@gmail.com>
 
 # Docker Build Arguments
 ARG RESTY_VERSION="1.11.2.5"
