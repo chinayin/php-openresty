@@ -163,4 +163,9 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 RUN chown -R admin.admin /home/admin/.composer
 
+# Expose ports
+EXPOSE 9000
+EXPOSE 80
+EXPOSE 443
+
 ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]
