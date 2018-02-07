@@ -3,7 +3,7 @@
 # Disable Strict Host checking for non interactive git clones
 
 mkdir -p -m 0700 /root/.ssh
-# Prevent config files from being filled to infinity by force of stop and restart the container 
+# Prevent config files from being filled to infinity by force of stop and restart the container
 echo "" > /root/.ssh/config
 echo -e "Host *\n\tStrictHostKeyChecking no\n" >> /root/.ssh/config
 
@@ -12,7 +12,7 @@ if [[ "$GIT_USE_SSH" == "1" ]] ; then
 fi
 
 if [ ! -z "$SSH_KEY" ]; then
- echo $SSH_KEY > /root/.ssh/id_rsa.base64
+ echo ${SSH_KEY} > /root/.ssh/id_rsa.base64
  base64 -d /root/.ssh/id_rsa.base64 > /root/.ssh/id_rsa
  chmod 600 /root/.ssh/id_rsa
 fi
@@ -80,7 +80,7 @@ fi
 
 # Prevent config files from being filled to infinity by force of stop and restart the container
 lastlinephpconf="$(grep "." /usr/local/etc/php-fpm.conf | tail -1)"
-if [[ $lastlinephpconf == *"php_flag[display_errors]"* ]]; then
+if [[ ${lastlinephpconf} == *"php_flag[display_errors]"* ]]; then
  sed -i '$ d' /usr/local/etc/php-fpm.conf
 fi
 
@@ -141,7 +141,7 @@ fi
 # Enable xdebug
 XdebugFile='/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini'
 if [[ "$ENABLE_XDEBUG" == "1" ]] ; then
-  if [ -f $XdebugFile ]; then
+  if [ -f ${XdebugFile} ]; then
   	echo "Xdebug enabled"
   else
   	echo "Enabling xdebug"
@@ -149,24 +149,24 @@ if [[ "$ENABLE_XDEBUG" == "1" ]] ; then
   	# see https://github.com/docker-library/php/pull/420
     docker-php-ext-enable xdebug
     # see if file exists
-    if [ -f $XdebugFile ]; then
+    if [ -f ${XdebugFile} ]; then
         # See if file contains xdebug text.
         if grep -q xdebug.remote_enable "$XdebugFile"; then
             echo "Xdebug already enabled... skipping"
         else
-            echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > $XdebugFile # Note, single arrow to overwrite file.
-            echo "xdebug.remote_enable=1 "  >> $XdebugFile
-            echo "xdebug.remote_log=/tmp/xdebug.log"  >> $XdebugFile
-            echo "xdebug.remote_autostart=false "  >> $XdebugFile # I use the xdebug chrome extension instead of using autostart
+            echo "zend_extension=$(find /usr/local/lib/php/extensions/ -name xdebug.so)" > ${XdebugFile} # Note, single arrow to overwrite file.
+            echo "xdebug.remote_enable=1 "  >> ${XdebugFile}
+            echo "xdebug.remote_log=/tmp/xdebug.log"  >> ${XdebugFile}
+            echo "xdebug.remote_autostart=false "  >> ${XdebugFile} # I use the xdebug chrome extension instead of using autostart
             # NOTE: xdebug.remote_host is not needed here if you set an environment variable in docker-compose like so `- XDEBUG_CONFIG=remote_host=192.168.111.27`.
             #       you also need to set an env var `- PHP_IDE_CONFIG=serverName=docker`
         fi
     fi
   fi
 else
-    if [ -f $XdebugFile ]; then
+    if [ -f ${XdebugFile} ]; then
         echo "Disabling Xdebug"
-      rm $XdebugFile
+      rm ${XdebugFile}
     fi
 fi
 
@@ -189,7 +189,7 @@ if [[ "$RUN_SCRIPTS" == "1" ]] ; then
     # make scripts executable incase they aren't
     chmod -Rf 750 /var/www/html/scripts/*; sync;
     # run scripts in number order
-    for i in `ls /var/www/html/scripts/`; do /var/www/html/scripts/$i ; done
+    for i in `ls /var/www/html/scripts/`; do /var/www/html/scripts/${i} ; done
   else
     echo "Can't find script directory"
   fi
