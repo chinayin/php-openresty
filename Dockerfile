@@ -155,6 +155,8 @@ RUN \
 # Add additional binaries into PATH for convenience
 ENV PATH=$PATH:/usr/local/openresty/luajit/bin/:/usr/local/openresty/nginx/sbin/:/usr/local/openresty/bin/
 
+COPY ./sh/ /var/log/supervisor/
+
 COPY php.ini /usr/local/etc/php/
 COPY nginx.conf /usr/local/openresty/nginx/conf/
 COPY supervisord.conf /etc/supervisor/supervisord.conf
