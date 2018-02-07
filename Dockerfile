@@ -159,6 +159,7 @@ COPY ./sh/ /var/log/supervisor/
 
 COPY php.ini /usr/local/etc/php/
 COPY nginx.conf /usr/local/openresty/nginx/conf/
+COPY project.conf /data/conf/
 COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 RUN chown -R admin.admin /home/admin/.composer
