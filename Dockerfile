@@ -1,6 +1,6 @@
-FROM php:7.2.1-fpm-alpine
+#FROM php:7.2.1-fpm-alpine
 #FROM songshenzong/php
-#FROM php:7.1.12-fpm-alpine
+FROM php:7.1.12-fpm-alpine
 
 LABEL maintainer="Ric Harvey <ric@ngd.io>"
 
