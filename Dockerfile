@@ -1,10 +1,7 @@
-# Dockerfile - alpine
-# https://github.com/openresty/docker-openresty
-
+# Dockerfile - php-openresty
 FROM songshenzong/php
-#FROM php:7.2.2-fpm-alpine
 
-LABEL maintainer="Evan Wies <evan@neomantra.net>"
+LABEL maintainer="Songshenzong <i@songshenzong.com>"
 
 # Docker Build Arguments
 ARG RESTY_VERSION="1.13.6.1"
@@ -101,10 +98,6 @@ COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
 ADD conf/supervisord.conf /etc/supervisord.conf
 
-
-
-
-
 # Add Scripts
 ADD scripts/start.sh /start.sh
 ADD scripts/pull /usr/bin/pull
@@ -115,9 +108,6 @@ RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push && chmod 755 /usr/bin/let
 
 # copy in code
 ADD src/ /usr/local/openresty/nginx/html/
-ADD errors/ /var/www/errors
-
-
 
 EXPOSE 443 80
 
