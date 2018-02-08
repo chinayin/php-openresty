@@ -87,7 +87,8 @@ RUN apk add --no-cache --virtual .build-deps \
         pcre-${RESTY_PCRE_VERSION}.tar.gz pcre-${RESTY_PCRE_VERSION} \
     && apk del .build-deps \
     && ln -sf /dev/stdout /usr/local/openresty/nginx/logs/access.log \
-    && ln -sf /dev/stderr /usr/local/openresty/nginx/logs/error.log
+    && ln -sf /dev/stderr /usr/local/openresty/nginx/logs/error.log \
+    && rm -rf /usr/local/openresty/nginx/html/*
 
 # Add additional binaries into PATH for convenience
 ENV PATH=$PATH:/usr/local/openresty/luajit/bin/:/usr/local/openresty/nginx/sbin/:/usr/local/openresty/bin/
@@ -97,14 +98,12 @@ COPY conf/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY conf/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
 # Copy php configuration files
-#COPY conf/php/etc/php-fpm.d/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
 COPY conf/php/etc/php-fpm.d/www.conf /usr/local/etc/php-fpm.d/www.conf
 
 # Copy supervisord configuration file
-ADD conf/supervisord.conf /etc/supervisord.conf
+COPY conf/supervisord.conf /etc/supervisord.conf
 
 # copy in code
-RUN rm -rf /usr/local/openresty/nginx/html/*
 COPY src/ /usr/local/openresty/nginx/html/
 
 WORKDIR /usr/local/openresty/nginx/html/
