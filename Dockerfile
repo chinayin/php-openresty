@@ -1,6 +1,5 @@
-#FROM php:7.2.2-fpm-alpine
-FROM php:7.1.12-fpm-alpine
-
+FROM php:7.2.2-fpm-alpine
+#FROM php:7.1.12-fpm-alpine
 
 ENV php_conf /usr/local/etc/php-fpm.conf
 ENV fpm_conf /usr/local/etc/php-fpm.d/www.conf
