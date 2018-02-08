@@ -1,6 +1,6 @@
-#FROM php:7.2.1-fpm-alpine
+FROM php:7.2.2-fpm-alpine
 #FROM songshenzong/php
-FROM php:7.1.12-fpm-alpine
+#FROM php:7.1.12-fpm-alpine
 
 
 ENV php_conf /usr/local/etc/php-fpm.conf
@@ -212,7 +212,6 @@ RUN echo @testing http://nl.alpinelinux.org/alpine/edge/testing >> /etc/apk/repo
     pip install -U certbot && \
     mkdir -p /etc/letsencrypt/webrootauth && \
     apk del gcc musl-dev linux-headers libffi-dev augeas-dev python-dev make autoconf
-#    ln -s /usr/bin/php7 /usr/bin/php
 
 ADD conf/supervisord.conf /etc/supervisord.conf
 
