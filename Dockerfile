@@ -59,7 +59,6 @@ RUN apk add --no-cache --virtual .build-deps \
         geoip-dev \
         libxslt-dev \
         linux-headers \
-        supervisor \
         make \
         perl-dev \
         readline-dev \
@@ -70,6 +69,8 @@ RUN apk add --no-cache --virtual .build-deps \
         libgcc \
         libxslt \
         zlib \
+        supervisor \
+        bash \
     && cd /tmp \
     && curl -fSL https://www.openssl.org/source/openssl-${RESTY_OPENSSL_VERSION}.tar.gz -o openssl-${RESTY_OPENSSL_VERSION}.tar.gz \
     && tar xzf openssl-${RESTY_OPENSSL_VERSION}.tar.gz \
