@@ -98,17 +98,10 @@ COPY conf/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
 ADD conf/supervisord.conf /etc/supervisord.conf
 
-# Add Scripts
-ADD scripts/start.sh /start.sh
-ADD scripts/pull /usr/bin/pull
-ADD scripts/push /usr/bin/push
-ADD scripts/letsencrypt-setup /usr/bin/letsencrypt-setup
-ADD scripts/letsencrypt-renew /usr/bin/letsencrypt-renew
-RUN chmod 755 /usr/bin/pull && chmod 755 /usr/bin/push && chmod 755 /usr/bin/letsencrypt-setup && chmod 755 /usr/bin/letsencrypt-renew && chmod 755 /start.sh
 
 # copy in code
 COPY src/ /usr/local/openresty/nginx/html/
 
 EXPOSE 443 80
 
-CMD ["/start.sh"]
+CMD ["/usr/bin/supervisord", "-n","-c", "/etc/supervisord.conf"]
