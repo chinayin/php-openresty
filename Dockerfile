@@ -101,7 +101,7 @@ ADD conf/supervisord.conf /etc/supervisord.conf
 
 # copy in code
 RUN rm -rf /usr/local/openresty/nginx/html/*
-RUN src/ /usr/local/openresty/nginx/html/
+COPY src/ /usr/local/openresty/nginx/html/
 
 EXPOSE 443 80
 
