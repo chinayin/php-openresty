@@ -1,6 +1,5 @@
-FROM php:7.2.2-fpm-alpine
-#FROM songshenzong/php
-#FROM php:7.1.12-fpm-alpine
+#FROM php:7.2.2-fpm-alpine
+FROM php:7.1.12-fpm-alpine
 
 
 ENV php_conf /usr/local/etc/php-fpm.conf
@@ -19,8 +18,8 @@ ENV LUAJIT_INC=/usr/include/luajit-2.0
 ENV LD_PRELOAD /usr/lib/preloadable_libiconv.so php
 RUN apk add --no-cache --repository http://dl-3.alpinelinux.org/alpine/edge/testing gnu-libiconv
 
-#RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
-RUN GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F \
+RUN GPG_KEYS=B0F4253373F8F6F510D42178520A9993A1C052F8 \
+#RUN GPG_KEYS=1729F83938DA44E27BA0F4D3DBDB397470D12172 B1B44D8F021E4E2D6021E995DC9FF8D3EE5AF27F \
   && CONFIG="\
     --prefix=/etc/nginx \
     --sbin-path=/usr/sbin/nginx \
