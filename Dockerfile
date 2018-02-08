@@ -96,6 +96,9 @@ ENV PATH=$PATH:/usr/local/openresty/luajit/bin/:/usr/local/openresty/nginx/sbin/
 COPY conf/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY conf/nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
+# Copy php configuration files
+COPY conf/php/etc/php-fpm.d/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.conf
+
 # Copy supervisord configuration file
 ADD conf/supervisord.conf /etc/supervisord.conf
 
