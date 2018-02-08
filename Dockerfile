@@ -1,7 +1,8 @@
 # Dockerfile - alpine
 # https://github.com/openresty/docker-openresty
 
-FROM php:7.2.2-fpm-alpine
+FROM songshenzong/php
+#FROM php:7.2.2-fpm-alpine
 
 LABEL maintainer="Evan Wies <evan@neomantra.net>"
 
