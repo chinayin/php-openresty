@@ -59,6 +59,7 @@ RUN apk add --no-cache --virtual .build-deps \
         geoip-dev \
         libxslt-dev \
         linux-headers \
+        supervisor \
         make \
         perl-dev \
         readline-dev \
@@ -97,5 +98,12 @@ ENV PATH=$PATH:/usr/local/openresty/luajit/bin/:/usr/local/openresty/nginx/sbin/
 COPY nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
 COPY nginx.vh.default.conf /etc/nginx/conf.d/default.conf
 
+ADD conf/supervisord.conf /etc/supervisord.conf
+ADD scripts/start.sh /start.sh
 
-CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
+#CMD ["/usr/local/openresty/bin/openresty", "-g", "daemon off;"]
+
+
+EXPOSE 443 80
+
+CMD ["/start.sh"]
