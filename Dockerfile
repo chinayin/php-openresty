@@ -102,7 +102,6 @@ COPY conf/php/etc/php-fpm.d/zz-docker.conf /usr/local/etc/php-fpm.d/zz-docker.co
 # Copy supervisord configuration file
 ADD conf/supervisord.conf /etc/supervisord.conf
 
-
 # copy in code
 RUN rm -rf /usr/local/openresty/nginx/html/*
 COPY src/ /usr/local/openresty/nginx/html/
