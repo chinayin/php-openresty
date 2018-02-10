@@ -1,62 +1,61 @@
 # Docker Image packaging for PHP & OpenResty
 
+![docker hub](https://img.shields.io/docker/pulls/songshenzong/php-openresty.svg?style=flat-square)
 
-基于官方镜像 Based Official Image
+![docker hub](https://img.shields.io/docker/stars/songshenzong/php-openresty.svg?style=flat-square)
+
+
+
+##### 基于官方镜像 Based Official Image
 
 ```bash
-    openresty/openresty:alpine
+openresty/openresty:alpine
+```
+
+
+##### 官网 Docker
+
+```bash
+docker pull songshenzong/php-openresty
 ```
 
 
 
-官网 Docker
+##### 阿里云公网 Alibaba Cloud Internet
 
 ```bash
-    docker pull songshenzong/php-openresty
+docker pull registry.cn-beijing.aliyuncs.com/songshenzong/php-openresty
 ```
 
 
 
-阿里云公网 Alibaba Cloud Internet
+##### 阿里云经典内网 Alibaba Cloud Intranet
 
 ```bash
-    docker pull registry.cn-beijing.aliyuncs.com/songshenzong/php-openresty
+docker pull registry-internal.cn-beijing.aliyuncs.com/songshenzong/php-openresty
 ```
 
 
 
-阿里云经典内网 Alibaba Cloud Intranet
+##### 阿里云VPC网络 Alibaba Cloud VPC Network
 
 ```bash
-    docker pull registry-internal.cn-beijing.aliyuncs.com/songshenzong/php-openresty
+docker pull registry-vpc.cn-beijing.aliyuncs.com/songshenzong/php-openresty
 ```
 
 
-
-阿里云VPC网络 Alibaba Cloud VPC Network
-
-```bash
-    docker pull registry-vpc.cn-beijing.aliyuncs.com/songshenzong/php-openresty
-```
-
-
-
-
-
-![docker hub](https://img.shields.io/docker/pulls/richarvey/nginx-php-fpm.svg?style=flat-square)
-![docker hub](https://img.shields.io/docker/stars/richarvey/nginx-php-fpm.svg?style=flat-square)
 
 ## Overview
 This is a Dockerfile/image to build a container for nginx and php-fpm, with the ability to pull website code from git when the container is created, as well as allowing the container to push and pull changes to the code to and from git. The container also has the ability to update templated files with variables passed to docker in order to update your code and settings. There is support for lets encrypt SSL configurations, custom nginx configs, core nginx/PHP variable overrides for running preferences, X-Forwarded-For headers and UID mapping for local volume support.
 
 If you have improvements or suggestions please open an issue or pull request on the GitHub project page.
 
-### Versioning
+### Version
 | Docker Tag | GitHub Release | Nginx Version | PHP Version | Alpine Version |
 |-----|-------|-----|--------|--------|
-| latest | Master Branch |1.13.7 | 7.1.12 | 3.4 |
+| latest | Master Branch |1.13.6.1 | 7.2.2 | 3.6 |
 
-For other tags please see: [versioning](https://github.com/richarvey/nginx-php-fpm/blob/master/docs/versioning.md)
+For other tags please see: [Version](https://github.com/richarvey/nginx-php-fpm/blob/master/docs/versioning.md)
 
 ### Links
 - [https://github.com/richarvey/nginx-php-fpm](https://github.com/richarvey/nginx-php-fpm)
