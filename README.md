@@ -1,6 +1,6 @@
 # Docker Image packaging for PHP & OpenResty
 
-![docker hub](https://img.shields.io/docker/pulls/songshenzong/php-openresty.svg?style=for-the-badge)
+![docker hub](https://img.shields.io/docker/pulls/songshenzong/php-openresty.svg?style=flat-square)
 ![docker hub](https://img.shields.io/docker/stars/songshenzong/php-openresty.svg?style=flat-square)
 
 
