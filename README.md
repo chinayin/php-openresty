@@ -4,7 +4,6 @@
 ![docker hub](https://img.shields.io/docker/stars/songshenzong/php-openresty.svg?style=flat-square)
 
 
-
 ##### 基于官方镜像 Based Official Image
 
 ```bash
