@@ -1,9 +1,9 @@
 [![Songshenzong](https://cdn.songshenzong.com/images/logo.png)](https://songshenzong.com)
 
-[![Docker Stars](https://img.shields.io/docker/stars/songshenzong/php-openresty.svg?style=flat-square)](https://hub.docker.com/r/songshenzong/php/)
-[![Docker Pulls](https://img.shields.io/docker/pulls/songshenzong/php-openresty.svg?style=flat-square)](https://hub.docker.com/r/songshenzong/php/)
-[![Docker Automated build](https://img.shields.io/docker/automated/songshenzong/php-openresty.svg?style=flat-square)](https://hub.docker.com/r/songshenzong/php/)
-[![Docker Build Status](https://img.shields.io/docker/build/songshenzong/php-openresty.svg?style=flat-square)](https://hub.docker.com/r/songshenzong/php/)
+[![Docker Stars](https://img.shields.io/docker/stars/songshenzong/php-openresty.svg?style=flat-square)](https://hub.docker.com/r/songshenzong/php-openresty/)
+[![Docker Pulls](https://img.shields.io/docker/pulls/songshenzong/php-openresty.svg?style=flat-square)](https://hub.docker.com/r/songshenzong/php-openresty/)
+[![Docker Automated build](https://img.shields.io/docker/automated/songshenzong/php-openresty.svg?style=flat-square)](https://hub.docker.com/r/songshenzong/php-openresty/)
+[![Docker Build Status](https://img.shields.io/docker/build/songshenzong/php-openresty.svg?style=flat-square)](https://hub.docker.com/r/songshenzong/php-openresty/)
 
 
 ## 关于 About
@@ -14,8 +14,7 @@ Docker Image packaging for PHP & OpenResty
 
 ```bash
 openresty/openresty:alpine
-
-php:7.2.2-fpm-alpine
+php:7.2.3-fpm-alpine
 ```
 
 
