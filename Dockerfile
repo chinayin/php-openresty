@@ -108,6 +108,6 @@ COPY src/ /usr/local/openresty/nginx/html/
 
 WORKDIR /usr/local/openresty/nginx/html/
 
-EXPOSE 443 80
+EXPOSE 443 80 9000
 
 CMD ["/usr/bin/supervisord", "-n","-c", "/etc/supervisord.conf"]
