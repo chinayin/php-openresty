@@ -1,5 +1,6 @@
 # Dockerfile - php-openresty
-FROM songshenzong/php
+#FROM songshenzong/php
+FROM registry.cn-beijing.aliyuncs.com/songshenzong/php
 
 LABEL maintainer="Songshenzong <i@songshenzong.com>"
 
