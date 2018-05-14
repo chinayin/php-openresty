@@ -14,7 +14,7 @@ Docker Image packaging for PHP & OpenResty
 
 ```bash
 openresty/openresty:alpine
-php:7.2.3-fpm-alpine
+php:7.2.5-fpm-alpine
 ```
 
 
@@ -31,7 +31,6 @@ docker pull songshenzong/php-openresty
 ```bash
 docker pull registry.cn-beijing.aliyuncs.com/songshenzong/php-openresty
 ```
-
 
 
 ## 阿里云经典内网 Alibaba Cloud Intranet
